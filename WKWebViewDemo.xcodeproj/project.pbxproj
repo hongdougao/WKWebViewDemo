@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872BCE191C9F94ED00653A57 /* WKWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 872BCE181C9F94ED00653A57 /* WKWebVC.m */; };
 		878C524E1C9BFBB100066D80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 878C524D1C9BFBB100066D80 /* main.m */; };
 		878C52511C9BFBB100066D80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 878C52501C9BFBB100066D80 /* AppDelegate.m */; };
 		878C52541C9BFBB100066D80 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 878C52531C9BFBB100066D80 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		872BCE171C9F94ED00653A57 /* WKWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebVC.h; sourceTree = "<group>"; };
+		872BCE181C9F94ED00653A57 /* WKWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebVC.m; sourceTree = "<group>"; };
 		878C52491C9BFBB100066D80 /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878C524D1C9BFBB100066D80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		878C524F1C9BFBB100066D80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				878C52521C9BFBB100066D80 /* ViewController.h */,
 				878C52531C9BFBB100066D80 /* ViewController.m */,
 				878C52551C9BFBB100066D80 /* Main.storyboard */,
+				872BCE171C9F94ED00653A57 /* WKWebVC.h */,
+				872BCE181C9F94ED00653A57 /* WKWebVC.m */,
 				878C52581C9BFBB100066D80 /* Assets.xcassets */,
 				878C525A1C9BFBB100066D80 /* LaunchScreen.storyboard */,
 				878C525D1C9BFBB100066D80 /* Info.plist */,
@@ -154,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				878C52541C9BFBB100066D80 /* ViewController.m in Sources */,
+				872BCE191C9F94ED00653A57 /* WKWebVC.m in Sources */,
 				878C52511C9BFBB100066D80 /* AppDelegate.m in Sources */,
 				878C524E1C9BFBB100066D80 /* main.m in Sources */,
 			);
@@ -304,6 +310,7 @@
 				878C52621C9BFBB100066D80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

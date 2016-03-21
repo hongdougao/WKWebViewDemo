@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <WebKit/WebKit.h>
+
 @interface ViewController ()
 
 @end
@@ -19,10 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    WKWebView *webV = [[WKWebView alloc]initWithFrame:self.view.bounds];
-    [webV setBackgroundColor:[UIColor yellowColor]];
-    [webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
-    [self.view addSubview:webV];
+    
+}
+- (IBAction)btnPush:(id)sender {
+    [self performSegueWithIdentifier:@"wkWebVC" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
