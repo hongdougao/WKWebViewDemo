@@ -26,7 +26,9 @@
     webV.navigationDelegate = self;
     webV.UIDelegate = self;
     
-    
+    [webV evaluateJavaScript:@"hi()" completionHandler:^(id Result, NSError * error) {
+         NSLog(@"Error -> %@", error);
+    }];
 //    [webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
      [webV  loadRequest: [NSURLRequest requestWithURL:[[NSBundle mainBundle] URLForResource:@"a" withExtension:@"html"]]] ;
     [self.view addSubview:webV];
