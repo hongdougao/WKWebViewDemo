@@ -11,6 +11,10 @@
 		872C072E1CA0E1530084126E /* a.html in Resources */ = {isa = PBXBuildFile; fileRef = 872C072D1CA0E1530084126E /* a.html */; };
 		877856921CA23EA80016B8FD /* SafariVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 877856911CA23EA80016B8FD /* SafariVC.m */; };
 		877856941CA241890016B8FD /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877856931CA241890016B8FD /* SafariServices.framework */; };
+		877856971CA283B50016B8FD /* jquery-1.9.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 877856961CA283B50016B8FD /* jquery-1.9.1.min.js */; };
+		877856991CA283BB0016B8FD /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 877856981CA283BB0016B8FD /* main.js */; };
+		8778569B1CA2866C0016B8FD /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = 8778569A1CA2866C0016B8FD /* common.js */; };
+		8778569E1CA298110016B8FD /* js_oc.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8778569D1CA298110016B8FD /* js_oc.js.txt */; };
 		878C524E1C9BFBB100066D80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 878C524D1C9BFBB100066D80 /* main.m */; };
 		878C52511C9BFBB100066D80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 878C52501C9BFBB100066D80 /* AppDelegate.m */; };
 		878C52541C9BFBB100066D80 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 878C52531C9BFBB100066D80 /* ViewController.m */; };
@@ -27,6 +31,10 @@
 		877856901CA23EA80016B8FD /* SafariVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafariVC.h; sourceTree = "<group>"; };
 		877856911CA23EA80016B8FD /* SafariVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafariVC.m; sourceTree = "<group>"; };
 		877856931CA241890016B8FD /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		877856961CA283B50016B8FD /* jquery-1.9.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.9.1.min.js"; sourceTree = "<group>"; };
+		877856981CA283BB0016B8FD /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		8778569A1CA2866C0016B8FD /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
+		8778569D1CA298110016B8FD /* js_oc.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = js_oc.js.txt; sourceTree = "<group>"; };
 		878C52491C9BFBB100066D80 /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878C524D1C9BFBB100066D80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		878C524F1C9BFBB100066D80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +61,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8778569C1CA286700016B8FD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				877856981CA283BB0016B8FD /* main.js */,
+				8778569D1CA298110016B8FD /* js_oc.js.txt */,
+				877856961CA283B50016B8FD /* jquery-1.9.1.min.js */,
+				8778569A1CA2866C0016B8FD /* common.js */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		878C52401C9BFBB100066D80 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +93,7 @@
 		878C524B1C9BFBB100066D80 /* WKWebViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8778569C1CA286700016B8FD /* New Group */,
 				878C524F1C9BFBB100066D80 /* AppDelegate.h */,
 				878C52501C9BFBB100066D80 /* AppDelegate.m */,
 				878C52521C9BFBB100066D80 /* ViewController.h */,
@@ -160,7 +180,11 @@
 				878C525C1C9BFBB100066D80 /* LaunchScreen.storyboard in Resources */,
 				878C52591C9BFBB100066D80 /* Assets.xcassets in Resources */,
 				872C072E1CA0E1530084126E /* a.html in Resources */,
+				8778569E1CA298110016B8FD /* js_oc.js.txt in Resources */,
+				877856991CA283BB0016B8FD /* main.js in Resources */,
 				878C52571C9BFBB100066D80 /* Main.storyboard in Resources */,
+				8778569B1CA2866C0016B8FD /* common.js in Resources */,
+				877856971CA283B50016B8FD /* jquery-1.9.1.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

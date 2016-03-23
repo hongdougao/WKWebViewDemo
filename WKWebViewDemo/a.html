@@ -25,7 +25,8 @@
 
 <div id="domeBack">返回</div>
 
-<pre>
+	<div class="btns">
+ <pre>
         openAppMeans.openAppClick(); //切换
         openAppMeans.openAppBack(); //返回
 </pre>
@@ -88,25 +89,25 @@
     };
 
 alert("a");
-function connectWebViewJavascriptBridge(callback) {
-    if (window.WebViewJavascriptBridge) {
-        callback(WebViewJavascriptBridge)
-    } else {
-        document.addEventListener('WebViewJavascriptBridgeReady',   function() {
-                                  callback(WebViewJavascriptBridge)
-                                  }, false)
-    }
-}
+<!--function connectWebViewJavascriptBridge(callback) {-->
+<!--    if (window.WebViewJavascriptBridge) {-->
+<!--        callback(WebViewJavascriptBridge)-->
+<!--    } else {-->
+<!--        document.addEventListener('WebViewJavascriptBridgeReady',   function() {-->
+<!--                                  callback(WebViewJavascriptBridge)-->
+<!--                                  }, false)-->
+<!--    }-->
+<!--}-->
 
 
-connectWebViewJavascriptBridge(function(bridge) {
-                               bridge.init(function(message, responseCallback) {
-                                           log('JS got a message', message)
-                                           var data = { 'Javascript Responds':'Wee!' }
-                                           log('JS responding with', data)
-                                           responseCallback(data)
-                                           })
-                               }
+<!--connectWebViewJavascriptBridge(function(bridge) {-->
+<!--                               bridge.init(function(message, responseCallback) {-->
+<!--                                           log('JS got a message', message)-->
+<!--                                           var data = { 'Javascript Responds':'Wee!' }-->
+<!--                                           log('JS responding with', data)-->
+<!--                                           responseCallback(data)-->
+<!--                                           })-->
+<!--                               }-->
                                alert("b");
 
 function sendCommand(cmd,param){
@@ -143,4 +144,7 @@ function clickLink4 (){
 </script>
 
 </body>
+<script src="jquery.js"></script>
+<script src="common.js"></script>
+
 </html>
