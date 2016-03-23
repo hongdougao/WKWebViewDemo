@@ -17,11 +17,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+//    WKWebViewConfiguration *conf = [WKWebViewConfiguration alloc]
+    
     WKWebView *webV = [[WKWebView alloc]initWithFrame:self.view.bounds];
     [webV setBackgroundColor:[UIColor yellowColor]];
     webV.navigationDelegate = self;
     webV.UIDelegate = self;
-    [webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+    
+    
+//    [webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
+     [webV  loadRequest: [NSURLRequest requestWithURL:[[NSBundle mainBundle] URLForResource:@"a" withExtension:@"html"]]] ;
     [self.view addSubview:webV];
 }
 #pragma mark WKNavigationDelegate
@@ -133,7 +138,9 @@
  */
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
     NSLog(@"%s",__FUNCTION__);
-
+    UIAlertView *alert =   [[UIAlertView alloc]initWithTitle:webView.title message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+ 
+    [alert show];
 }
 /*! @abstract 展示一个js控制板
  @param frameframe js发布的方法 关于信息的框架  

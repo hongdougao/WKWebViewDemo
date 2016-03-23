@@ -5,44 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="ljG-zF-JVa">
-            <objects>
-                <tableViewController id="RVq-lx-XMd" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aao-AW-Of5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nTv-PF-Esk">
-                            <rect key="frame" x="0.0" y="136" width="320" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.073153409089999996" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="WKWEBVIEW"/>
-                            <connections>
-                                <segue destination="dFY-Po-rNQ" kind="push" id="hYp-9k-Wyw"/>
-                            </connections>
-                        </button>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="C60-ce-qt1">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C60-ce-qt1" id="RRH-aC-yBA">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="RVq-lx-XMd" id="eUg-C7-NKI"/>
-                            <outlet property="delegate" destination="RVq-lx-XMd" id="VQY-LH-Qcu"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="mRC-b8-gcu"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hj0-v4-BXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="535" y="548"/>
-        </scene>
         <!--WebVC-->
         <scene sceneID="yE0-OL-nlr">
             <objects>
@@ -56,7 +18,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecb-5M-ex5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="548"/>
+            <point key="canvasLocation" x="929" y="414"/>
+        </scene>
+        <!--SafariVC-->
+        <scene sceneID="4JZ-Qi-M4i">
+            <objects>
+                <viewController id="aWD-8G-IfC" customClass="SafariVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oSI-qE-Uye">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CtP-ha-2PW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZK-r2-Jdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="947" y="1077"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8jj-OW-6wO">
@@ -67,12 +44,44 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="RVq-lx-XMd" kind="relationship" relationship="rootViewController" id="XPY-pm-usj"/>
+                        <segue destination="RWP-yu-KY7" kind="relationship" relationship="rootViewController" id="gsd-cQ-KRc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSW-ve-RiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34" y="557"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TKU-Wm-KoT">
+            <objects>
+                <viewController id="RWP-yu-KY7" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J7u-26-vbL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B9r-YB-EP7">
+                                <rect key="frame" x="79" y="151" width="142" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="webVC"/>
+                                <connections>
+                                    <segue destination="dFY-Po-rNQ" kind="push" id="iL4-OE-Ndz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vr6-Nb-kf2">
+                                <rect key="frame" x="79" y="232" width="142" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.073153409089999996" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="safariVC"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GJV-wF-GBx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtO-nF-CvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="548"/>
         </scene>
     </scenes>
 </document>

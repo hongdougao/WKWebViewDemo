@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "WKWebVC.h"
+#import "SafariVC.h"
 @interface ViewController ()
 
 @end
@@ -19,10 +20,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:@"toSf" forState:UIControlStateNormal];
+    [btn setFrame:CGRectMake(80, 280, 180, 20)];
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn addTarget:self action:@selector(openSafari:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
-- (IBAction)btnPush:(id)sender {
-    [self performSegueWithIdentifier:@"wkWebVC" sender:self];
+- (void)openSafari:(id)sender{
+
+    SafariVC *sf = [[SafariVC alloc]initWithURL:[NSURL URLWithString:@"https://m.baidu.com"]];
+//    SafariVC *sf = [[SafariVC alloc]initWithURL:[[NSBundle mainBundle] URLForResource:@"a" withExtension:@"html"]];
+    [self presentViewController:sf animated:YES completion:^{
+        NSLog(@"presentViewController:sf animated:YES completion");
+    }];
+//    [self.navigationController pushViewController:sf animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
