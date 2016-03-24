@@ -9,7 +9,8 @@
 #import "WKWebVC.h"
 #import <WebKit/WebKit.h>
 @interface WKWebVC  ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
-
+{ WKWebView *webV;
+}
 @end
 
 @implementation WKWebVC
@@ -21,17 +22,26 @@
     [conf.userContentController addScriptMessageHandler:self name:@"webViewApp"];
     
     
-    WKWebView *webV = [[WKWebView alloc]initWithFrame:self.view.bounds];
+    webV = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:conf];
     [webV setBackgroundColor:[UIColor yellowColor]];
     webV.navigationDelegate = self;
     webV.UIDelegate = self;
     
-    [webV evaluateJavaScript:@"hi()" completionHandler:^(id Result, NSError * error) {
-         NSLog(@"Error -> %@", error);
-    }];
+
 //    [webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]]];
      [webV  loadRequest: [NSURLRequest requestWithURL:[[NSBundle mainBundle] URLForResource:@"a" withExtension:@"html"]]] ;
     [self.view addSubview:webV];
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:@"toSf" forState:UIControlStateNormal];
+    [btn setFrame:CGRectMake(80, 280, 180, 20)];
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn addTarget:self action:@selector(showSaf:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+- (void)showSaf:(id)sender{
+
 }
 #pragma mark WKNavigationDelegate
 /**这个代理方法表示当客户端收到服务器的响应头，根据response相关信息，可以决定这次跳转是否可以继续进行。
@@ -83,7 +93,9 @@
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
     NSLog(@"%s",__FUNCTION__);
-
+    [webV evaluateJavaScript:@"hi()" completionHandler:^(id Result, NSError * error) {
+        NSLog(@"Error -> %@", error);
+    }];
 }
 // 页面加载失败之后调用
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
@@ -132,7 +144,7 @@
     NSLog(@"%s",__FUNCTION__);
 
 }
-/*! @abstract 展示js提示板
+/*! @abstract 展示js提示板   ///捕获js的alert
  
  @param frame js发布的方法 关于信息的框架
  @param completionHandler 回调在命令版消失的时候被调用 
@@ -184,7 +196,12 @@
 #pragma mark--WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     NSLog(@"%s",__FUNCTION__);
-
+ 
+    NSLog(@"js传给oc的方法名：%@",message.name);//方法名
+    
+    if ([message.name isEqualToString:@"webApp"]) {
+           NSLog(@"js传给oc的方法内容：%@",message.body);//方法内容
+    }
 }
 
 @end

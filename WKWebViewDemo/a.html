@@ -118,10 +118,11 @@ var url = "yintaimobile://"+cmd+"?" +param//ShieldTopBottom?state=true";
     document.location = url;
 }
 function clickLink1(){
-                                   alert("1");
+<!--                                   alert("1");-->
                                    hi
-                
-                                   alert("2");
+<!--                                      alert("3");-->
+                                   window.webkit.messageHandlers.webViewApp.postMessage("hello oc ,js said");
+<!--                                   alert("2");-->
 <!--                                   window.webkit.messageHandlers.webViewApp.postMessage(message);-->
 <!---->
 <!--    sendCommand("ShieldTopBottom","state=true");-->
