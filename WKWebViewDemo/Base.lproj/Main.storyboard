@@ -20,6 +20,21 @@
             </objects>
             <point key="canvasLocation" x="929" y="414"/>
         </scene>
+        <!--Core View Controller-->
+        <scene sceneID="Zsn-18-j7F">
+            <objects>
+                <viewController id="cTg-tn-JbR" customClass="JSCoreViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bY4-o9-zp7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lcq-Gx-k7g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmi-tV-iic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="1215"/>
+        </scene>
         <!--SafariVC-->
         <scene sceneID="4JZ-Qi-M4i">
             <objects>
@@ -73,6 +88,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.073153409089999996" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="safariVC"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bDZ-c0-K5H">
+                                <rect key="frame" x="68" y="340" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.76868021604942793" blue="0.13408439546962458" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="jsCoreVC"/>
+                                <connections>
+                                    <segue destination="cTg-tn-JbR" kind="push" id="fqw-u5-Pdg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
