@@ -41,9 +41,44 @@
     NSLog(@"Sum :%d",[sum toInt32]);
     
     
+    JSContext *context3 = [[JSContext alloc]init];
+    context3[@"NSlog"] = ^(){
+        NSLog(@"++++++++begin log +++++++++");
+        
+        NSArray *args = [JSContext currentArguments];
+        
+        for (JSValue *jsVal  in args) {
+            NSLog(@" jsVal in args:%@",jsVal);
+        }
+        
+        JSValue *this = [JSContext currentThis];
+        NSLog(@"this :%@",this);//this :[object GlobalObject] 全局函数
+        NSLog(@"---------end log----------");
+        
+    };
+    [context3 evaluateScript:@"NSlog('ider', [7, 21], { hello:'world', js:100 });"];
     
+    
+    /* (JSValue *)callWithArguments:(NSArray *)arguments;方法可以反过来将参数传进去来调用方法。*/
+    
+    JSContext *context4 = [[JSContext alloc]init];
+    
+    [context4 evaluateScript:@"function add( a , b ){ return a + b ;}"];
+    
+    JSValue *add2 = context4[@"add"];
+    NSLog(@"Func :%@",add2);
+    
+    JSValue *sum2 = [add callWithArguments:@[@(7),@(21)]];
+    NSLog(@"SUM2 :%d",[sum2 toInt32]);
+    
+    JSContext *context5 = [[JSContext alloc]init];
+    context5.exceptionHandler = ^(JSContext *con,JSValue *exception){
+         NSLog(@"%@", exception);
+        con.exception = exception;
+    };
+    
+    [context5 evaluateScript:@"ider.zheng = 21 "];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
