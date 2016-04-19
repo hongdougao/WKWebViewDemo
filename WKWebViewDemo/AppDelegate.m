@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSString *str = @"剩余45分钟";
+    NSScanner *scanner = [NSScanner scannerWithString:str];
+    [scanner scanUpToCharactersFromSet:[NSCharacterSet decimalDigitCharacterSet] intoString:nil];
+    int number;
+    [scanner scanInt:&number];
+
+    NSLog(@"number : %d", number);
     return YES;
 }
 
